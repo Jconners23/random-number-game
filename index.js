@@ -1,3 +1,5 @@
+let num = 0;
+
 function generateRandomNumber() {
   let rnd = Math.floor(Math.random() * 100) + 1;
   //random number between 1 and 100
@@ -27,5 +29,14 @@ function makeAGuess(answer) {
   } while (!isInteger);
 }
 
-let num = generateRandomNumber();
-console.log(makeAGuess(num));
+function playGame() {
+  num = generateRandomNumber();
+  let result;
+  do {
+    result = makeAGuess(num);
+    console.log(result);
+  } while (result != "Correct");
+  return true;
+}
+
+playGame();

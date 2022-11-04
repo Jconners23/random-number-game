@@ -5,3 +5,13 @@ function generateRandomNumber() {
   //random number between 1 and 100
   return rnd;
 }
+
+function differenceFromAnswer(guess, answer) {
+  if (guess < answer) {
+    return "Too low";
+  } else if (guess > answer) {
+    return "Too high";
+  } else {
+    return "Correct";
+  }
+}

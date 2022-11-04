@@ -15,12 +15,16 @@ function differenceFromAnswer(guess, answer) {
 }
 
 function makeAGuess(answer) {
-  let guess = prompt("Enter your guess ");
-  if ((/^\d+$/).test(guess)) {
-    return differenceFromAnswer(guess, answer);
-  } else {
-    return "Not an integer";
-  }
+  let guess, isInteger;
+  do {
+    guess = prompt("Enter your guess ");
+    isInteger = (/^\d+$/).test(guess);
+    if (isInteger) {
+      return differenceFromAnswer(guess, answer);
+    } else {
+      console.log("Not an integer");
+    }
+  } while (!isInteger);
 }
 
 let num = generateRandomNumber();
